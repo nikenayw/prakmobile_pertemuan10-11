@@ -1,8 +1,9 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
 import router from './router';
 
 import { IonicVue } from '@ionic/vue';
+import { createPinia } from 'pinia';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/vue/css/core.css';
@@ -20,24 +21,19 @@ import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
-
-/* @import '@ionic/vue/css/palettes/dark.always.css'; */
-/* @import '@ionic/vue/css/palettes/dark.class.css'; */
-import '@ionic/vue/css/palettes/dark.system.css';
-
 /* Theme variables */
 import './theme/variables.css';
 
-const app = createApp(App)
-  .use(IonicVue)
-  .use(router);
+const app = createApp(App);
+
+// Urutan pemanggilan .use() yang benar:
+const pinia = createPinia(); // Membuat instance Pinia terlebih dahulu
+
+app
+  .use(IonicVue)        // Menggunakan IonicVue untuk aplikasi Ionic
+  .use(pinia)           // Pastikan Pinia digunakan setelah IonicVue
+  .use(router);         // Gunakan router setelah Pinia
 
 router.isReady().then(() => {
-  app.mount('#app');
+  app.mount('#app');    // Pastikan aplikasi di-mount setelah semua plugin digunakan
 });

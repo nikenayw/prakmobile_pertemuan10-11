@@ -11,6 +11,8 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "paths": {
       "@/*": ["./src/*"]
