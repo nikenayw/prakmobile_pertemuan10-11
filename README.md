@@ -49,9 +49,9 @@
 11. Delete
 
     Saat pengguna melakukan swipe pada Todo, opsi delete muncul di sisi kiri. Ketika opsi ini dipilih, fungsi handleDelete akan dipanggil untuk menghapus tugas tersebut dari database Firestore.
-
-   <img src="assets11/tb-deleted.png" alt="Delete" width="300"/>
-   <img src="assets11/delete-success.png" alt="Delete" width="300"/>
+    
+    <img src="assets11/tb-deleted.png" alt="Delete" width="300"/>
+    <img src="assets11/delete-success.png" alt="Delete" width="300"/>
 
 13. Halaman Profile
 
